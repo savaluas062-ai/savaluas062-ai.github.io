@@ -1,1 +1,1277 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sava Shirley Luas — Profil Pribadi</title>
 
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Konfigurasi Tema & Palet Warna Hangat Elegan -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#FAF7F2',
+                            200: '#F2EBE0',
+                            300: '#E6DAC9',
+                        },
+                        terracotta: {
+                            50: '#FCF3F0',
+                            100: '#F7E4DE',
+                            200: '#EEC9BD',
+                            400: '#D48A78',
+                            500: '#C06C5C',
+                            600: '#A65647',
+                            700: '#894437',
+                        },
+                        sage: {
+                            50: '#F3F6F1',
+                            100: '#E5ECE1',
+                            200: '#CBD9C4',
+                            500: '#687A5E',
+                            600: '#53644B',
+                        },
+                        espresso: {
+                            700: '#35302B',
+                            800: '#25211E',
+                            900: '#181513',
+                            950: '#110F0D',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 12px 40px -10px rgba(41, 37, 36, 0.08)',
+                        'soft-dark': '0 12px 40px -10px rgba(0, 0, 0, 0.45)',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-cream-100 text-stone-800 dark:bg-espresso-900 dark:text-cream-100 font-sans antialiased selection:bg-terracotta-200 selection:text-stone-900 dark:selection:bg-terracotta-600 dark:selection:text-white transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Dekorasi Latar Belakang Halus -->
+    <div aria-hidden="true" class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute -top-24 -right-24 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-terracotta-200/40 dark:bg-terracotta-700/15 blur-3xl"></div>
+        <div class="absolute top-1/3 -left-24 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-sage-200/45 dark:bg-sage-600/15 blur-3xl"></div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- NAVIGASI UTAMA (STICKY NAVBAR)                            -->
+    <!-- ========================================================= -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-cream-100/85 dark:bg-espresso-900/85 border-b border-cream-300/70 dark:border-espresso-700/80 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Brand / Nama Singkat -->
+                <a href="#beranda" class="flex items-center gap-2 group focus:outline-none">
+                    <span class="w-9 h-9 rounded-full bg-terracotta-500 text-white font-serif font-bold text-lg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                        S
+                    </span>
+                    <span class="font-serif text-xl sm:text-2xl font-semibold tracking-tight text-stone-900 dark:text-cream-50">
+                        Sava<span class="text-terracotta-500">.</span>
+                    </span>
+                </a>
+
+                <!-- Menu Navigasi Desktop -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Navigasi Utama">
+                    <a href="#beranda" class="px-3.5 py-2 rounded-full text-sm font-medium text-stone-700 dark:text-stone-300 hover:text-terracotta-600 dark:hover:text-terracotta-400 hover:bg-cream-200/70 dark:hover:bg-espresso-800 transition-colors">Beranda</a>
+                    <a href="#tentang" class="px-3.5 py-2 rounded-full text-sm font-medium text-stone-700 dark:text-stone-300 hover:text-terracotta-600 dark:hover:text-terracotta-400 hover:bg-cream-200/70 dark:hover:bg-espresso-800 transition-colors">Tentang Saya</a>
+                    <a href="#hobi" class="px-3.5 py-2 rounded-full text-sm font-medium text-stone-700 dark:text-stone-300 hover:text-terracotta-600 dark:hover:text-terracotta-400 hover:bg-cream-200/70 dark:hover:bg-espresso-800 transition-colors">Minat &amp; Hobi</a>
+                    <a href="#kontak" class="px-3.5 py-2 rounded-full text-sm font-medium text-stone-700 dark:text-stone-300 hover:text-terracotta-600 dark:hover:text-terracotta-400 hover:bg-cream-200/70 dark:hover:bg-espresso-800 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Tombol Aksi Kanan: Edit Profil, Dark Mode, Menu Mobile -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <!-- Tombol Edit Profil -->
+                    <button id="openEditModalBtn" type="button" class="inline-flex items-center gap-2 px-3.5 py-2.5 sm:px-4 rounded-full text-xs sm:text-sm font-semibold bg-white dark:bg-espresso-800 text-stone-800 dark:text-cream-100 border border-cream-300 dark:border-espresso-700 shadow-sm hover:border-terracotta-400 hover:text-terracotta-600 dark:hover:text-terracotta-400 transition-all active:scale-95">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zM19.5 7.125L16.862 4.487"/>
+                        </svg>
+                        <span class="hidden sm:inline">Edit Profil</span>
+                    </button>
+
+                    <!-- Toggle Dark / Light Mode -->
+                    <button id="themeToggleBtn" type="button" aria-label="Ubah tema terang atau gelap" class="p-2.5 rounded-full bg-white dark:bg-espresso-800 text-stone-700 dark:text-amber-300 border border-cream-300 dark:border-espresso-700 shadow-sm hover:border-terracotta-400 transition-all active:scale-95">
+                        <!-- Ikon Bulan (Light Mode) -->
+                        <svg id="moonIcon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+                        </svg>
+                        <!-- Ikon Matahari (Dark Mode) -->
+                        <svg id="sunIcon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Tombol Hamburger Mobile -->
+                    <button id="mobileMenuBtn" type="button" aria-label="Buka menu navigasi" aria-expanded="false" class="md:hidden p-2.5 rounded-full bg-white dark:bg-espresso-800 text-stone-700 dark:text-cream-100 border border-cream-300 dark:border-espresso-700 shadow-sm">
+                        <svg id="menuOpenIcon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                        </svg>
+                        <svg id="menuCloseIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dropdown Menu Mobile -->
+            <nav id="mobileMenu" class="hidden md:hidden pb-4 pt-2 border-t border-cream-200 dark:border-espresso-800 space-y-1" aria-label="Navigasi Mobile">
+                <a href="#beranda" class="mobile-nav-link block px-4 py-3 rounded-2xl text-base font-medium text-stone-700 dark:text-stone-200 hover:bg-cream-200 dark:hover:bg-espresso-800 transition-colors">Beranda</a>
+                <a href="#tentang" class="mobile-nav-link block px-4 py-3 rounded-2xl text-base font-medium text-stone-700 dark:text-stone-200 hover:bg-cream-200 dark:hover:bg-espresso-800 transition-colors">Tentang Saya</a>
+                <a href="#hobi" class="mobile-nav-link block px-4 py-3 rounded-2xl text-base font-medium text-stone-700 dark:text-stone-200 hover:bg-cream-200 dark:hover:bg-espresso-800 transition-colors">Minat &amp; Hobi</a>
+                <a href="#kontak" class="mobile-nav-link block px-4 py-3 rounded-2xl text-base font-medium text-stone-700 dark:text-stone-200 hover:bg-cream-200 dark:hover:bg-espresso-800 transition-colors">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========================================================= -->
+        <!-- HALAMAN DEPAN (HERO SECTION)                              -->
+        <!-- ========================================================= -->
+        <section id="beranda" class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+                    <!-- Kolom Kiri: Sapaan, Nama, Ringkasan & CTA -->
+                    <div class="lg:col-span-7 order-2 lg:order-1 text-center lg:text-left reveal-item opacity-0 translate-y-6 transition-all duration-700">
+                        <!-- Badge Sapaan -->
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sage-100 dark:bg-sage-600/20 text-sage-600 dark:text-sage-200 text-xs sm:text-sm font-semibold tracking-wide mb-5 border border-sage-200/70 dark:border-sage-500/30">
+                            <span class="w-2 h-2 rounded-full bg-sage-500 animate-pulse"></span>
+                            <span>Selamat Datang di Ruang Pribadiku</span>
+                        </div>
+
+                        <!-- Sapaan Hangat & Nama Lengkap -->
+                        <p class="text-base sm:text-lg font-medium text-terracotta-600 dark:text-terracotta-400 mb-2">
+                            Halo, senang bertemu denganmu! Saya
+                        </p>
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-stone-900 dark:text-cream-50 leading-tight tracking-tight mb-5">
+                            Sava Shirley Luas
+                        </h1>
+
+                        <!-- Tagline Perkenalan Singkat (Dapat Diedit) -->
+                        <p id="displayHeroTagline" class="text-base sm:text-lg text-stone-600 dark:text-stone-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-7">
+                            Pribadi yang hangat, kreatif, dan selalu bersemangat menikmati setiap proses perjalanan hidup. Berdomisili di Pondok Indah Maumbi dan senang berbagi cerita, inspirasi, serta momen penuh makna.
+                        </p>
+
+                        <!-- Ringkasan Lokasi & Tanggal Lahir -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-9">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 shadow-sm text-sm font-medium text-stone-700 dark:text-stone-200">
+                                <svg class="w-4 h-4 text-terracotta-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                                </svg>
+                                <span>Pondok Indah Maumbi</span>
+                            </div>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 shadow-sm text-sm font-medium text-stone-700 dark:text-stone-200">
+                                <svg class="w-4 h-4 text-sage-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+                                </svg>
+                                <span>27 September 2007</span>
+                            </div>
+                        </div>
+
+                        <!-- Tombol Navigasi Utama (Biodata & Kontak) -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+                            <a href="#tentang" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm sm:text-base shadow-md shadow-terracotta-500/25 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                                <span>Lihat Biodata</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"/>
+                                </svg>
+                            </a>
+                            <a href="#kontak" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white dark:bg-espresso-800 hover:bg-cream-200/70 dark:hover:bg-espresso-700 text-stone-800 dark:text-cream-100 font-semibold text-sm sm:text-base border border-cream-300 dark:border-espresso-700 shadow-sm hover:-translate-y-0.5 transition-all">
+                                <span>Hubungi Saya</span>
+                                <svg class="w-4 h-4 text-terracotta-500" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Bingkai Foto Profil Estetis (60009.jpg) -->
+                    <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center reveal-item opacity-0 translate-y-6 transition-all duration-700 delay-150">
+                        <div class="relative w-full max-w-xs sm:max-w-sm">
+                            <!-- Lapisan Bingkai Dekoratif di Belakang -->
+                            <div aria-hidden="true" class="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-terracotta-200/70 via-cream-200 to-sage-200/70 dark:from-terracotta-700/30 dark:via-espresso-800 dark:to-sage-600/30 rotate-3 transition-transform duration-500"></div>
+
+                            <!-- Bingkai Utama Foto Profil -->
+                            <div class="relative group rounded-[1.85rem] bg-white dark:bg-espresso-800 p-3 shadow-soft dark:shadow-soft-dark border border-cream-300/80 dark:border-espresso-700">
+                                <div class="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] bg-cream-200 dark:bg-espresso-900">
+                                    <!-- Foto Pengguna: 60009.jpg -->
+                                    <img
+                                        id="heroProfileImage"
+                                        src="60009.jpg"
+                                        alt="Foto Profil Sava Shirley Luas"
+                                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                        onerror="handleImageFallback(this)"
+                                    >
+
+                                    <!-- Overlay Halus Saat Hover untuk Ganti Foto Cepat -->
+                                    <button type="button" id="quickPhotoBtn" class="absolute top-3 right-3 p-2.5 rounded-full bg-stone-900/55 hover:bg-stone-900/80 text-white backdrop-blur-sm opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-all shadow-md" title="Ganti foto profil">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Lencana Melayang di Sudut Bawah Foto -->
+                                <div class="absolute -bottom-4 -left-3 sm:-left-6 flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/95 dark:bg-espresso-800/95 backdrop-blur-md border border-cream-300 dark:border-espresso-700 shadow-lg">
+                                    <div class="w-9 h-9 rounded-xl bg-terracotta-100 dark:bg-terracotta-700/30 text-terracotta-600 dark:text-terracotta-400 flex items-center justify-center text-base font-bold">
+                                        ♎
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="text-[11px] uppercase tracking-wider font-semibold text-stone-500 dark:text-stone-400">Zodiak</p>
+                                        <p class="text-sm font-bold text-stone-900 dark:text-cream-50">Libra &bull; Sep 2007</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- BAGIAN TENTANG SAYA & BIODATA                             -->
+        <!-- ========================================================= -->
+        <section id="tentang" class="py-16 sm:py-24 bg-cream-50/80 dark:bg-espresso-950/50 border-y border-cream-200 dark:border-espresso-800/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Judul Bagian -->
+                <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16 reveal-item opacity-0 translate-y-6 transition-all duration-700">
+                    <span class="inline-block text-xs font-bold uppercase tracking-[0.2em] text-terracotta-600 dark:text-terracotta-400 mb-2">
+                        Mengenal Lebih Dekat
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-cream-50 mb-3">
+                        Tentang Saya &amp; Biodata
+                    </h2>
+                    <div class="w-16 h-1 bg-terracotta-400 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Grid Kartu Tentang Saya & Biodata -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+                    <!-- Kartu Paragraf Perkenalan -->
+                    <div class="lg:col-span-7 flex flex-col justify-between rounded-3xl bg-white dark:bg-espresso-800 p-6 sm:p-9 border border-cream-300/80 dark:border-espresso-700 shadow-soft dark:shadow-soft-dark reveal-item opacity-0 translate-y-6 transition-all duration-700">
+                        <div>
+                            <div class="inline-flex items-center gap-2 text-sage-600 dark:text-sage-200 text-sm font-semibold mb-4">
+                                <span class="w-8 h-8 rounded-full bg-sage-100 dark:bg-sage-600/25 flex items-center justify-center">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                                    </svg>
+                                </span>
+                                <span>Perkenalan Singkat</span>
+                            </div>
+
+                            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-stone-900 dark:text-cream-50 mb-4">
+                                Cerita Singkat Tentang Sava
+                            </h3>
+
+                            <p id="displayAboutBio" class="text-stone-600 dark:text-stone-300 text-base leading-relaxed mb-5">
+                                Halo! Nama saya Sava Shirley Luas, lahir pada 27 September 2007 dan saat ini tinggal di Pondok Indah Maumbi. Sebagai seorang Libra, saya menyukai keseimbangan, suasana yang hangat, serta hal-hal bernuansa estetis dalam keseharian. Saya senang bertemu orang baru, menjalin pertemanan yang tulus, dan terus belajar hal-hal bermanfaat untuk mengembangkan potensi diri.
+                            </p>
+
+                            <p id="displayAboutQuote" class="italic font-serif text-base sm:text-lg text-terracotta-600 dark:text-terracotta-400 border-l-4 border-terracotta-400 pl-4 py-1 my-6">
+                                "Menikmati setiap langkah dengan hati yang bersyukur, senyuman yang hangat, dan semangat untuk terus bertumbuh."
+                            </p>
+                        </div>
+
+                        <!-- Sorotan Singkat -->
+                        <div class="grid grid-cols-3 gap-3 pt-6 border-t border-cream-200 dark:border-espresso-700/80">
+                            <div class="rounded-2xl bg-cream-100 dark:bg-espresso-900/70 p-3.5 text-center">
+                                <p id="dynamicAgeDisplay" class="font-serif text-xl sm:text-2xl font-bold text-terracotta-600 dark:text-terracotta-400">19</p>
+                                <p class="text-xs font-medium text-stone-500 dark:text-stone-400 mt-0.5">Usia (Tahun)</p>
+                            </div>
+                            <div class="rounded-2xl bg-cream-100 dark:bg-espresso-900/70 p-3.5 text-center">
+                                <p class="font-serif text-xl sm:text-2xl font-bold text-sage-600 dark:text-sage-200">Libra</p>
+                                <p class="text-xs font-medium text-stone-500 dark:text-stone-400 mt-0.5">Zodiak</p>
+                            </div>
+                            <div class="rounded-2xl bg-cream-100 dark:bg-espresso-900/70 p-3.5 text-center">
+                                <p class="font-serif text-xl sm:text-2xl font-bold text-stone-800 dark:text-cream-100">Maumbi</p>
+                                <p class="text-xs font-medium text-stone-500 dark:text-stone-400 mt-0.5">Domisili</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Biodata Lengkap -->
+                    <div class="lg:col-span-5 flex flex-col justify-between rounded-3xl bg-white dark:bg-espresso-800 p-6 sm:p-8 border border-cream-300/80 dark:border-espresso-700 shadow-soft dark:shadow-soft-dark reveal-item opacity-0 translate-y-6 transition-all duration-700 delay-100">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="font-serif text-2xl font-semibold text-stone-900 dark:text-cream-50">
+                                    Kartu Biodata
+                                </h3>
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-terracotta-50 dark:bg-terracotta-700/25 text-terracotta-600 dark:text-terracotta-400">
+                                    Data Diri
+                                </span>
+                            </div>
+
+                            <dl class="space-y-4">
+                                <!-- Nama Lengkap -->
+                                <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 border border-cream-200/80 dark:border-espresso-700/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white dark:bg-espresso-800 text-terracotta-500 flex items-center justify-center shadow-sm shrink-0">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <dt class="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">Nama Lengkap</dt>
+                                        <dd class="text-base font-bold text-stone-900 dark:text-cream-50 mt-0.5">Sava Shirley Luas</dd>
+                                    </div>
+                                </div>
+
+                                <!-- Alamat -->
+                                <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 border border-cream-200/80 dark:border-espresso-700/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white dark:bg-espresso-800 text-sage-500 flex items-center justify-center shadow-sm shrink-0">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <dt class="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">Alamat</dt>
+                                        <dd class="text-base font-bold text-stone-900 dark:text-cream-50 mt-0.5">Pondok Indah Maumbi</dd>
+                                    </div>
+                                </div>
+
+                                <!-- Tanggal Lahir -->
+                                <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 border border-cream-200/80 dark:border-espresso-700/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white dark:bg-espresso-800 text-terracotta-500 flex items-center justify-center shadow-sm shrink-0">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <dt class="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">Tanggal Lahir</dt>
+                                        <dd class="text-base font-bold text-stone-900 dark:text-cream-50 mt-0.5">27 September 2007</dd>
+                                    </div>
+                                </div>
+
+                                <!-- Zodiak -->
+                                <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 border border-cream-200/80 dark:border-espresso-700/60">
+                                    <div class="w-10 h-10 rounded-xl bg-white dark:bg-espresso-800 text-sage-500 flex items-center justify-center shadow-sm shrink-0 text-lg font-bold">
+                                        ♎
+                                    </div>
+                                    <div>
+                                        <dt class="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">Zodiak</dt>
+                                        <dd class="text-base font-bold text-stone-900 dark:text-cream-50 mt-0.5">Libra <span class="text-sm font-normal text-stone-500 dark:text-stone-400">(23 Sep – 22 Okt)</span></dd>
+                                    </div>
+                                </div>
+                            </dl>
+                        </div>
+
+                        <!-- Tombol Salin Biodata -->
+                        <div class="mt-6 pt-5 border-t border-cream-200 dark:border-espresso-700/80">
+                            <button id="copyBiodataBtn" type="button" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-cream-200/80 hover:bg-cream-300/80 dark:bg-espresso-700/70 dark:hover:bg-espresso-700 text-stone-800 dark:text-cream-100 text-sm font-semibold transition-all active:scale-[0.98]">
+                                <svg class="w-4 h-4 text-terracotta-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/>
+                                </svg>
+                                <span>Salin Ringkasan Biodata</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- BAGIAN MINAT & HOBI + PENDIDIKAN & AKTIVITAS              -->
+        <!-- ========================================================= -->
+        <section id="hobi" class="py-16 sm:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Judul Bagian -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12 reveal-item opacity-0 translate-y-6 transition-all duration-700">
+                    <div>
+                        <span class="inline-block text-xs font-bold uppercase tracking-[0.2em] text-sage-600 dark:text-sage-200 mb-2">
+                            Gaya Hidup &amp; Keseharian
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-cream-50">
+                            Minat, Hobi &amp; Aktivitas
+                        </h2>
+                    </div>
+                    <button type="button" class="open-edit-trigger inline-flex items-center gap-2 self-start md:self-auto px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-terracotta-600 dark:text-terracotta-400 bg-terracotta-50 dark:bg-terracotta-700/20 hover:bg-terracotta-100 dark:hover:bg-terracotta-700/30 transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z"/>
+                        </svg>
+                        <span>Sesuaikan Minat &amp; Aktivitas</span>
+                    </button>
+                </div>
+
+                <!-- Sub-bagian: Minat & Hobi (Dirender Dinamis oleh JS agar dapat dikustomisasi) -->
+                <div class="mb-14">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-5 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-terracotta-500"></span>
+                        <span>Minat &amp; Hobi Favorit</span>
+                    </h3>
+                    <div id="hobbiesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                        <!-- Kartu hobi diisi melalui JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Sub-bagian: Pendidikan & Aktivitas -->
+                <div>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-5 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-sage-500"></span>
+                        <span>Pendidikan &amp; Aktivitas</span>
+                    </h3>
+                    <div id="activitiesContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Kartu aktivitas diisi melalui JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================= -->
+        <!-- BAGIAN KONTAK & FORMULIR PESAN                            -->
+        <!-- ========================================================= -->
+        <section id="kontak" class="py-16 sm:py-24 bg-cream-50/90 dark:bg-espresso-950/55 border-t border-cream-200 dark:border-espresso-800/80">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Judul Bagian -->
+                <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16 reveal-item opacity-0 translate-y-6 transition-all duration-700">
+                    <span class="inline-block text-xs font-bold uppercase tracking-[0.2em] text-terracotta-600 dark:text-terracotta-400 mb-2">
+                        Tetap Terhubung
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 dark:text-cream-50 mb-3">
+                        Hubungi Saya
+                    </h2>
+                    <p class="text-stone-600 dark:text-stone-300 text-base">
+                        Punya sapaan hangat, ajakan kolaborasi, atau sekadar ingin berkenalan? Jangan ragu untuk mengirim pesan.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                    <!-- Kolom Kiri: Lokasi & Tautan Media Sosial -->
+                    <div class="lg:col-span-5 space-y-5 reveal-item opacity-0 translate-y-6 transition-all duration-700">
+                        <!-- Kartu Lokasi -->
+                        <div class="rounded-3xl bg-white dark:bg-espresso-800 p-6 border border-cream-300/80 dark:border-espresso-700 shadow-soft dark:shadow-soft-dark">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-600/25 text-sage-600 dark:text-sage-200 flex items-center justify-center shrink-0">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-xl font-semibold text-stone-900 dark:text-cream-50">Lokasi Domisili</h3>
+                                    <p class="text-stone-700 dark:text-stone-200 font-medium mt-1">Pondok Indah Maumbi</p>
+                                    <p class="text-sm text-stone-500 dark:text-stone-400 mt-0.5">Minahasa Utara, Sulawesi Utara, Indonesia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kartu Media Sosial -->
+                        <div class="rounded-3xl bg-white dark:bg-espresso-800 p-6 border border-cream-300/80 dark:border-espresso-700 shadow-soft dark:shadow-soft-dark">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-serif text-xl font-semibold text-stone-900 dark:text-cream-50">Media Sosial</h3>
+                                <button type="button" class="open-edit-trigger text-xs font-semibold text-terracotta-600 dark:text-terracotta-400 hover:underline">
+                                    Ubah Tautan
+                                </button>
+                            </div>
+
+                            <div class="space-y-3">
+                                <!-- Instagram -->
+                                <a id="socialInstagramLink" href="https://instagram.com/savashirleyluas" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 hover:bg-terracotta-50 dark:hover:bg-espresso-700/70 border border-cream-200 dark:border-espresso-700/70 transition-all group">
+                                    <div class="flex items-center gap-3.5 min-w-0">
+                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="truncate">
+                                            <p class="text-xs font-semibold text-stone-500 dark:text-stone-400">Instagram</p>
+                                            <p id="displayInstagramHandle" class="text-sm font-bold text-stone-900 dark:text-cream-50 truncate">@savashirleyluas</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-4 h-4 text-stone-400 group-hover:text-terracotta-500 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                                    </svg>
+                                </a>
+
+                                <!-- WhatsApp -->
+                                <a id="socialWhatsappLink" href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 hover:bg-sage-50 dark:hover:bg-espresso-700/70 border border-cream-200 dark:border-espresso-700/70 transition-all group">
+                                    <div class="flex items-center gap-3.5 min-w-0">
+                                        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.359 5.016l-1.422 5.188 5.313-1.391c1.469.797 3.125 1.219 4.719 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.109c-.25.703-1.438 1.344-2 1.422-.516.078-1.188.109-1.922-.125-.453-.141-1.031-.344-1.766-.656-3.109-1.344-5.141-4.5-5.297-4.703-.156-.203-1.266-1.688-1.266-3.219 0-1.531.797-2.281 1.078-2.594.281-.313.625-.391.828-.391.203 0 .422 0 .609.016.188.016.453-.078.703.531.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.156.328-.313.5-.156.172-.328.391-.469.516-.156.156-.328.328-.141.641.188.313.844 1.391 1.813 2.25 1.25 1.109 2.297 1.453 2.609 1.609.313.156.5.125.688-.078.188-.203.781-.922.984-1.234.203-.313.422-.266.703-.156.281.109 1.797.844 2.109 1s.516.234.594.359c.078.125.078.734-.172 1.438z"/>
+                                            </svg>
+                                        </div>
+                                        <div class="truncate">
+                                            <p class="text-xs font-semibold text-stone-500 dark:text-stone-400">WhatsApp</p>
+                                            <p id="displayWhatsappNumber" class="text-sm font-bold text-stone-900 dark:text-cream-50 truncate">+62 812-3456-7890</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-4 h-4 text-stone-400 group-hover:text-sage-500 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Email -->
+                                <a id="socialEmailLink" href="mailto:sava.shirley@email.com" class="flex items-center justify-between p-3.5 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 hover:bg-terracotta-50 dark:hover:bg-espresso-700/70 border border-cream-200 dark:border-espresso-700/70 transition-all group">
+                                    <div class="flex items-center gap-3.5 min-w-0">
+                                        <div class="w-10 h-10 rounded-xl bg-terracotta-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                                            </svg>
+                                        </div>
+                                        <div class="truncate">
+                                            <p class="text-xs font-semibold text-stone-500 dark:text-stone-400">Email</p>
+                                            <p id="displayEmailAddress" class="text-sm font-bold text-stone-900 dark:text-cream-50 truncate">sava.shirley@email.com</p>
+                                        </div>
+                                    </div>
+                                    <svg class="w-4 h-4 text-stone-400 group-hover:text-terracotta-500 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Formulir Pesan Singkat -->
+                    <div class="lg:col-span-7 rounded-3xl bg-white dark:bg-espresso-800 p-6 sm:p-9 border border-cream-300/80 dark:border-espresso-700 shadow-soft dark:shadow-soft-dark reveal-item opacity-0 translate-y-6 transition-all duration-700 delay-100">
+                        <h3 class="font-serif text-2xl font-semibold text-stone-900 dark:text-cream-50 mb-2">
+                            Kirim Pesan Singkat
+                        </h3>
+                        <p class="text-sm text-stone-500 dark:text-stone-400 mb-6">
+                            Tulis pesanmu di bawah ini, saya akan senang membacanya!
+                        </p>
+
+                        <form id="contactForm" class="space-y-4" novalidate>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="senderName" class="block text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-2">Nama Kamu</label>
+                                    <input id="senderName" name="senderName" type="text" required placeholder="Contoh: Nadia Putri" class="w-full px-4 py-3 rounded-2xl bg-cream-100/80 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-stone-900 dark:text-cream-50 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-terracotta-400 focus:border-transparent transition-all">
+                                </div>
+                                <div>
+                                    <label for="senderContact" class="block text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-2">Email / WhatsApp</label>
+                                    <input id="senderContact" name="senderContact" type="text" required placeholder="email@contoh.com" class="w-full px-4 py-3 rounded-2xl bg-cream-100/80 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-stone-900 dark:text-cream-50 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-terracotta-400 focus:border-transparent transition-all">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="senderMessage" class="block text-xs font-semibold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-2">Pesan</label>
+                                <textarea id="senderMessage" name="senderMessage" rows="4" required placeholder="Halo Sava, salam kenal ya..." class="w-full px-4 py-3 rounded-2xl bg-cream-100/80 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-stone-900 dark:text-cream-50 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-terracotta-400 focus:border-transparent transition-all resize-none"></textarea>
+                            </div>
+
+                            <!-- Pesan Error Validasi -->
+                            <p id="formErrorText" class="hidden text-sm font-medium text-rose-600 dark:text-rose-400"></p>
+
+                            <!-- Pesan Sukses Inline -->
+                            <div id="formSuccessBanner" class="hidden rounded-2xl bg-sage-50 dark:bg-sage-600/20 border border-sage-200 dark:border-sage-500/40 p-4 flex items-start gap-3">
+                                <svg class="w-5 h-5 text-sage-600 dark:text-sage-200 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-bold text-sage-600 dark:text-sage-200">Pesan berhasil dikirim!</p>
+                                    <p class="text-xs text-stone-600 dark:text-stone-300 mt-0.5">Terima kasih sudah menyapa Sava Shirley Luas. Pesanmu telah tercatat dengan baik.</p>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm sm:text-base shadow-md shadow-terracotta-500/25 hover:shadow-lg transition-all active:scale-95">
+                                <span>Kirim Pesan</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER                                                    -->
+    <!-- ========================================================= -->
+    <footer class="py-10 bg-cream-100 dark:bg-espresso-900 border-t border-cream-300/70 dark:border-espresso-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-center sm:text-left">
+                <p class="font-serif text-lg font-semibold text-stone-900 dark:text-cream-50">
+                    Sava Shirley Luas<span class="text-terracotta-500">.</span>
+                </p>
+                <p class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 mt-0.5">
+                    Pondok Indah Maumbi &bull; &copy; <span id="currentYear">2026</span> Hak Cipta Dilindungi.
+                </p>
+            </div>
+            <a href="#beranda" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-white dark:bg-espresso-800 text-stone-700 dark:text-stone-300 border border-cream-300 dark:border-espresso-700 hover:border-terracotta-400 hover:text-terracotta-600 transition-colors">
+                <span>Kembali ke Atas</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- MODAL EDIT PROFIL (KUSTOMISASI LANGSUNG)                  -->
+    <!-- ========================================================= -->
+    <div id="editModalBackdrop" class="fixed inset-0 z-50 hidden items-center justify-center bg-stone-950/60 backdrop-blur-sm p-3 sm:p-5 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
+        <div class="relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-3xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 shadow-2xl overflow-hidden my-auto">
+            <!-- Header Modal -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-cream-200 dark:border-espresso-700 bg-cream-50 dark:bg-espresso-900/60">
+                <div>
+                    <h3 id="editModalTitle" class="font-serif text-xl sm:text-2xl font-bold text-stone-900 dark:text-cream-50">
+                        Kustomisasi Profil
+                    </h3>
+                    <p class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                        Perbarui foto, teks perkenalan, hobi, atau tautan media sosial secara langsung.
+                    </p>
+                </div>
+                <button id="closeEditModalBtn" type="button" aria-label="Tutup jendela edit" class="p-2 rounded-full text-stone-500 hover:text-stone-900 dark:hover:text-white hover:bg-cream-200 dark:hover:bg-espresso-700 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Isi Modal (Scrollable) -->
+            <form id="editProfileForm" class="overflow-y-auto px-6 py-5 space-y-6">
+                <!-- Bagian 1: Foto Profil -->
+                <div class="p-4 rounded-2xl bg-cream-100/80 dark:bg-espresso-900/60 border border-cream-200 dark:border-espresso-700">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 mb-3">
+                        Foto Profil Halaman Depan
+                    </label>
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <img id="editPhotoPreview" src="60009.jpg" alt="Pratinjau Foto" class="w-20 h-24 rounded-2xl object-cover object-top border border-cream-300 dark:border-espresso-700 bg-cream-200" onerror="handleImageFallback(this)">
+                        <div class="flex-1 w-full space-y-2 text-center sm:text-left">
+                            <input id="photoUploadInput" type="file" accept="image/*" class="hidden">
+                            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                                <button type="button" id="triggerPhotoUploadBtn" class="px-4 py-2 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white text-xs font-semibold transition-colors">
+                                    Pilih Foto dari Perangkat
+                                </button>
+                                <button type="button" id="restoreDefaultPhotoBtn" class="px-3.5 py-2 rounded-full bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-stone-700 dark:text-stone-200 text-xs font-semibold hover:border-terracotta-400 transition-colors">
+                                    Gunakan Foto Utama (60009.jpg)
+                                </button>
+                            </div>
+                            <p class="text-[11px] text-stone-500 dark:text-stone-400">Format JPG, PNG, atau WEBP. Foto diperbarui langsung di halaman depan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian 2: Teks Perkenalan -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-terracotta-600 dark:text-terracotta-400">Teks Perkenalan</h4>
+                    <div>
+                        <label for="editHeroTagline" class="block text-xs font-semibold text-stone-600 dark:text-stone-300 mb-1.5">Ringkasan Halaman Depan</label>
+                        <textarea id="editHeroTagline" rows="2" class="w-full px-3.5 py-2.5 rounded-xl bg-cream-100/70 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-sm text-stone-900 dark:text-cream-50 focus:outline-none focus:ring-2 focus:ring-terracotta-400"></textarea>
+                    </div>
+                    <div>
+                        <label for="editAboutBio" class="block text-xs font-semibold text-stone-600 dark:text-stone-300 mb-1.5">Paragraf Tentang Saya</label>
+                        <textarea id="editAboutBio" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-cream-100/70 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-sm text-stone-900 dark:text-cream-50 focus:outline-none focus:ring-2 focus:ring-terracotta-400"></textarea>
+                    </div>
+                    <div>
+                        <label for="editAboutQuote" class="block text-xs font-semibold text-stone-600 dark:text-stone-300 mb-1.5">Kutipan Favorit</label>
+                        <input id="editAboutQuote" type="text" class="w-full px-3.5 py-2.5 rounded-xl bg-cream-100/70 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-sm text-stone-900 dark:text-cream-50 focus:outline-none focus:ring-2 focus:ring-terracotta-400">
+                    </div>
+                </div>
+
+                <!-- Bagian 3: Minat & Hobi -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-terracotta-600 dark:text-terracotta-400">Minat &amp; Hobi (4 Kartu)</h4>
+                    <div id="editHobbiesFields" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <!-- Input hobi dirender melalui JS -->
+                    </div>
+                </div>
+
+                <!-- Bagian 4: Pendidikan & Aktivitas -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-sage-600 dark:text-sage-200">Pendidikan &amp; Aktivitas (3 Kartu)</h4>
+                    <div id="editActivitiesFields" class="space-y-3">
+                        <!-- Input aktivitas dirender melalui JS -->
+                    </div>
+                </div>
+
+                <!-- Bagian 5: Media Sosial & Kontak -->
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-terracotta-600 dark:text-terracotta-400">Kontak &amp; Media Sosial</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div>
+                            <label for="editInstagram" class="block text-xs font-semibold text-stone-600 dark:text-stone-300 mb-1">Instagram</label>
+                            <input id="editInstagram" type="text" placeholder="@username" class="w-full px-3 py-2 rounded-xl bg-cream-100/70 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-sm text-stone-900 dark:text-cream-50 focus:outline-none focus:ring-2 focus:ring-terracotta-400">
+                        </div>
+                        <div>
+                            <label for="editWhatsapp" class="block text-xs font-semibold text-stone-600 dark:text-stone-300 mb-1">WhatsApp</label>
+                            <input id="editWhatsapp" type="text" placeholder="+62 812-xxxx-xxxx" class="w-full px-3 py-2 rounded-xl bg-cream-100/70 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-sm text-stone-900 dark:text-cream-50 focus:outline-none focus:ring-2 focus:ring-terracotta-400">
+                        </div>
+                        <div>
+                            <label for="editEmail" class="block text-xs font-semibold text-stone-600 dark:text-stone-300 mb-1">Email</label>
+                            <input id="editEmail" type="email" placeholder="nama@email.com" class="w-full px-3 py-2 rounded-xl bg-cream-100/70 dark:bg-espresso-900 border border-cream-300 dark:border-espresso-700 text-sm text-stone-900 dark:text-cream-50 focus:outline-none focus:ring-2 focus:ring-terracotta-400">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Footer Modal -->
+            <div class="flex flex-wrap items-center justify-between gap-3 px-6 py-4 border-t border-cream-200 dark:border-espresso-700 bg-cream-50 dark:bg-espresso-900/60">
+                <button type="button" id="resetProfileBtn" class="px-4 py-2.5 rounded-full text-xs font-semibold text-stone-600 dark:text-stone-300 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors">
+                    Reset ke Default
+                </button>
+                <div class="flex items-center gap-2.5">
+                    <button type="button" id="cancelEditModalBtn" class="px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-stone-700 dark:text-stone-200 hover:bg-cream-200/70 transition-colors">
+                        Batal
+                    </button>
+                    <button type="button" id="saveProfileBtn" class="px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-terracotta-500 hover:bg-terracotta-600 text-white shadow-md shadow-terracotta-500/20 transition-all active:scale-95">
+                        Simpan Perubahan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- NOTIFIKASI TOAST MELAYANG (PENGGANTI ALERT)               -->
+    <!-- ========================================================= -->
+    <div id="toastContainer" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-xs sm:max-w-sm"></div>
+
+    <!-- ========================================================= -->
+    <!-- LOGIKA JAVASCRIPT INTERAKTIF                              -->
+    <!-- ========================================================= -->
+    <script>
+        /**
+         * Fallback otomatis apabila file gambar lokal (60009.jpg) belum tersedia di lingkungan preview.
+         */
+        function handleImageFallback(imgElement) {
+            if (imgElement.dataset.fallbackApplied === 'true') return;
+            imgElement.dataset.fallbackApplied = 'true';
+            imgElement.src = 'https://placehold.co/600x750/687A5E/FAF7F2?text=Sava+Shirley+Luas';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Kunci penyimpanan lokal untuk menyimpan kustomisasi pengguna
+            const STORAGE_KEY = 'sava_shirley_profile_v1';
+            const THEME_KEY = 'sava_shirley_theme_v1';
+
+            // Data default profil Sava Shirley Luas
+            const defaultProfile = {
+                photoSrc: '60009.jpg',
+                heroTagline: 'Pribadi yang hangat, kreatif, dan selalu bersemangat menikmati setiap proses perjalanan hidup. Berdomisili di Pondok Indah Maumbi dan senang berbagi cerita, inspirasi, serta momen penuh makna.',
+                aboutBio: 'Halo! Nama saya Sava Shirley Luas, lahir pada 27 September 2007 dan saat ini tinggal di Pondok Indah Maumbi. Sebagai seorang Libra, saya menyukai keseimbangan, suasana yang hangat, serta hal-hal bernuansa estetis dalam keseharian. Saya senang bertemu orang baru, menjalin pertemanan yang tulus, dan terus belajar hal-hal bermanfaat untuk mengembangkan potensi diri.',
+                aboutQuote: '"Menikmati setiap langkah dengan hati yang bersyukur, senyuman yang hangat, dan semangat untuk terus bertumbuh."',
+                hobbies: [
+                    {
+                        icon: '📸',
+                        title: 'Fotografi & Estetika',
+                        desc: 'Mengabadikan momen sederhana, suasana hangat, dan sudut tempat yang penuh karakter.'
+                    },
+                    {
+                        icon: '🎧',
+                        title: 'Musik & Playlist',
+                        desc: 'Menemani aktivitas harian dengan alunan lagu pop, akustik, dan melodi menenangkan.'
+                    },
+                    {
+                        icon: '☕',
+                        title: 'Kuliner & Kafe Santai',
+                        desc: 'Menjelajahi tempat nongkrong yang nyaman bersama keluarga maupun teman dekat.'
+                    },
+                    {
+                        icon: '🌿',
+                        title: 'Jalan-Jalan & Alam',
+                        desc: 'Menyegarkan pikiran dengan pemandangan hijau, udara segar, dan perjalanan seru.'
+                    }
+                ],
+                activities: [
+                    {
+                        badge: 'Pendidikan',
+                        title: 'Pengembangan Diri & Studi',
+                        desc: 'Terus mengasah wawasan akademik, komunikasi, dan keterampilan baru untuk meraih cita-cita di masa depan.'
+                    },
+                    {
+                        badge: 'Sosial & Relasi',
+                        title: 'Aktivitas Komunitas',
+                        desc: 'Berpartisipasi aktif dalam kegiatan positif bersama teman-teman dan lingkungan sekitar Pondok Indah Maumbi.'
+                    },
+                    {
+                        badge: 'Kreativitas',
+                        title: 'Dokumentasi & Gaya Hidup',
+                        desc: 'Mengisi waktu luang dengan eksplorasi gaya kasual, jurnal pribadi, dan berbagi inspirasi positif.'
+                    }
+                ],
+                social: {
+                    instagram: '@savashirleyluas',
+                    whatsapp: '+62 812-3456-7890',
+                    email: 'sava.shirley@email.com'
+                }
+            };
+
+            // State aktif profil
+            let profileState = loadProfileState();
+            let pendingPhotoData = null;
+            let resetConfirmPending = false;
+
+            /**
+             * Memuat data profil dari localStorage dengan penanganan error aman.
+             */
+            function loadProfileState() {
+                try {
+                    const saved = localStorage.getItem(STORAGE_KEY);
+                    if (!saved) return structuredCloneCompat(defaultProfile);
+                    const parsed = JSON.parse(saved);
+                    return {
+                        ...structuredCloneCompat(defaultProfile),
+                        ...parsed,
+                        social: { ...defaultProfile.social, ...(parsed.social || {}) },
+                        hobbies: Array.isArray(parsed.hobbies) && parsed.hobbies.length === 4 ? parsed.hobbies : structuredCloneCompat(defaultProfile.hobbies),
+                        activities: Array.isArray(parsed.activities) && parsed.activities.length === 3 ? parsed.activities : structuredCloneCompat(defaultProfile.activities)
+                    };
+                } catch (err) {
+                    console.warn('Gagal memuat localStorage, menggunakan data default.', err);
+                    return structuredCloneCompat(defaultProfile);
+                }
+            }
+
+            /**
+             * Deep-copy objek sederhana agar kompatibel di semua browser.
+             */
+            function structuredCloneCompat(obj) {
+                return JSON.parse(JSON.stringify(obj));
+            }
+
+            /**
+             * Menyimpan state profil ke localStorage dengan error handling.
+             */
+            function saveProfileState() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(profileState));
+                } catch (err) {
+                    console.warn('Gagal menyimpan ke localStorage (kemungkinan ukuran foto terlalu besar):', err);
+                    showToast('Perubahan diterapkan di sesi ini (penyimpanan browser penuh).', 'info');
+                }
+            }
+
+            /**
+             * Menghitung usia secara akurat berdasarkan tanggal lahir 27 September 2007.
+             */
+            function calculateExactAge() {
+                const birthDate = new Date(2007, 8, 27); // Bulan 8 = September (0-indexed)
+                const today = new Date();
+                let age = today.getFullYear() - birthDate.getFullYear();
+                const monthDiff = today.getMonth() - birthDate.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                return Math.max(age, 0);
+            }
+
+            /**
+             * Menampilkan notifikasi toast elegan di pojok kanan bawah.
+             */
+            function showToast(message, type = 'success') {
+                const container = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                const accentClass = type === 'error'
+                    ? 'border-rose-400 bg-rose-50 dark:bg-rose-950/90 text-rose-800 dark:text-rose-200'
+                    : type === 'info'
+                        ? 'border-amber-400 bg-amber-50 dark:bg-espresso-800 text-stone-800 dark:text-amber-200'
+                        : 'border-sage-500 bg-white dark:bg-espresso-800 text-stone-800 dark:text-cream-100';
+
+                toast.className = `pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-2xl border-l-4 shadow-xl text-sm font-medium transition-all duration-300 opacity-0 translate-y-3 ${accentClass}`;
+                toast.innerHTML = `
+                    <span class="shrink-0 text-base">${type === 'error' ? '⚠️' : type === 'info' ? 'ℹ️' : '✨'}</span>
+                    <span>${escapeHtml(message)}</span>
+                `;
+                container.appendChild(toast);
+
+                // Trigger animasi masuk
+                requestAnimationFrame(() => {
+                    toast.classList.remove('opacity-0', 'translate-y-3');
+                });
+
+                // Hapus otomatis setelah 3.4 detik
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'translate-y-3');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3400);
+            }
+
+            /**
+             * Mencegah XSS saat merender teks buatan pengguna.
+             */
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text || '';
+                return div.innerHTML;
+            }
+
+            /**
+             * Merender seluruh konten profil ke DOM.
+             */
+            function renderProfile() {
+                // Foto profil
+                const heroImg = document.getElementById('heroProfileImage');
+                heroImg.dataset.fallbackApplied = 'false';
+                heroImg.src = profileState.photoSrc || '60009.jpg';
+
+                // Teks perkenalan
+                document.getElementById('displayHeroTagline').textContent = profileState.heroTagline;
+                document.getElementById('displayAboutBio').textContent = profileState.aboutBio;
+                document.getElementById('displayAboutQuote').textContent = profileState.aboutQuote;
+
+                // Usia & tahun berjalan
+                document.getElementById('dynamicAgeDisplay').textContent = calculateExactAge();
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+                // Kartu Minat & Hobi
+                const hobbiesContainer = document.getElementById('hobbiesContainer');
+                hobbiesContainer.innerHTML = profileState.hobbies.map((hobby, idx) => `
+                    <article class="group rounded-3xl bg-white dark:bg-espresso-800 p-6 border border-cream-300/80 dark:border-espresso-700 shadow-soft dark:shadow-soft-dark hover:-translate-y-1.5 hover:border-terracotta-300 dark:hover:border-terracotta-500/60 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl ${idx % 2 === 0 ? 'bg-terracotta-50 dark:bg-terracotta-700/25' : 'bg-sage-50 dark:bg-sage-600/25'} flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            ${escapeHtml(hobby.icon || '✨')}
+                        </div>
+                        <h4 class="font-serif text-lg font-bold text-stone-900 dark:text-cream-50 mb-2">
+                            ${escapeHtml(hobby.title)}
+                        </h4>
+                        <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                            ${escapeHtml(hobby.desc)}
+                        </p>
+                    </article>
+                `).join('');
+
+                // Kartu Pendidikan & Aktivitas
+                const activitiesContainer = document.getElementById('activitiesContainer');
+                activitiesContainer.innerHTML = profileState.activities.map((act, idx) => `
+                    <article class="rounded-3xl bg-cream-50/90 dark:bg-espresso-800/90 p-6 border border-cream-300/80 dark:border-espresso-700 hover:border-sage-400 dark:hover:border-sage-500 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 ${idx === 1 ? 'bg-terracotta-100/80 dark:bg-terracotta-700/30 text-terracotta-700 dark:text-terracotta-300' : 'bg-sage-100 dark:bg-sage-600/25 text-sage-600 dark:text-sage-200'}">
+                                ${escapeHtml(act.badge)}
+                            </span>
+                            <h4 class="font-serif text-xl font-bold text-stone-900 dark:text-cream-50 mb-2.5">
+                                ${escapeHtml(act.title)}
+                            </h4>
+                            <p class="text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                                ${escapeHtml(act.desc)}
+                            </p>
+                        </div>
+                    </article>
+                `).join('');
+
+                // Tautan Media Sosial
+                const igRaw = (profileState.social.instagram || '@savashirleyluas').trim();
+                const igClean = igRaw.replace(/^@/, '');
+                document.getElementById('displayInstagramHandle').textContent = igRaw.startsWith('@') ? igRaw : `@${igRaw}`;
+                document.getElementById('socialInstagramLink').href = `https://instagram.com/${encodeURIComponent(igClean)}`;
+
+                const waRaw = (profileState.social.whatsapp || '+62 812-3456-7890').trim();
+                const waDigits = waRaw.replace(/[^\d]/g, '');
+                document.getElementById('displayWhatsappNumber').textContent = waRaw;
+                document.getElementById('socialWhatsappLink').href = `https://wa.me/${waDigits || '6281234567890'}`;
+
+                const emailRaw = (profileState.social.email || 'sava.shirley@email.com').trim();
+                document.getElementById('displayEmailAddress').textContent = emailRaw;
+                document.getElementById('socialEmailLink').href = `mailto:${emailRaw}`;
+            }
+
+            // =========================================================
+            // PENGATURAN DARK / LIGHT MODE
+            // =========================================================
+            function initTheme() {
+                try {
+                    const savedTheme = localStorage.getItem(THEME_KEY);
+                    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                } catch (err) {
+                    console.warn('Gagal membaca tema:', err);
+                }
+            }
+
+            document.getElementById('themeToggleBtn').addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                try {
+                    localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+                } catch (err) {
+                    // Abaikan jika penyimpanan dibatasi
+                }
+                showToast(isDark ? 'Mode gelap diaktifkan' : 'Mode terang diaktifkan', 'info');
+            });
+
+            // =========================================================
+            // NAVIGASI MOBILE (HAMBURGER MENU)
+            // =========================================================
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuOpenIcon = document.getElementById('menuOpenIcon');
+            const menuCloseIcon = document.getElementById('menuCloseIcon');
+
+            function toggleMobileMenu(forceClose = false) {
+                const shouldHide = forceClose || !mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden', shouldHide);
+                menuOpenIcon.classList.toggle('hidden', !shouldHide);
+                menuCloseIcon.classList.toggle('hidden', shouldHide);
+                mobileMenuBtn.setAttribute('aria-expanded', String(!shouldHide));
+            }
+
+            mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+            document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+                link.addEventListener('click', () => toggleMobileMenu(true));
+            });
+
+            // =========================================================
+            // SALIN RINGKASAN BIODATA (KOMPATIBEL IFRAME)
+            // =========================================================
+            document.getElementById('copyBiodataBtn').addEventListener('click', () => {
+                const biodataText = [
+                    'Profil Pribadi',
+                    'Nama Lengkap : Sava Shirley Luas',
+                    'Alamat       : Pondok Indah Maumbi',
+                    'Tanggal Lahir: 27 September 2007',
+                    'Zodiak       : Libra'
+                ].join('\n');
+
+                try {
+                    const tempArea = document.createElement('textarea');
+                    tempArea.value = biodataText;
+                    tempArea.setAttribute('readonly', '');
+                    tempArea.style.position = 'fixed';
+                    tempArea.style.opacity = '0';
+                    document.body.appendChild(tempArea);
+                    tempArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempArea);
+                    showToast('Ringkasan biodata berhasil disalin!');
+                } catch (err) {
+                    showToast('Tidak dapat menyalin otomatis di browser ini.', 'error');
+                }
+            });
+
+            // =========================================================
+            // MODAL EDIT PROFIL & KUSTOMISASI LANGSUNG
+            // =========================================================
+            const editModalBackdrop = document.getElementById('editModalBackdrop');
+            const editPhotoPreview = document.getElementById('editPhotoPreview');
+            const photoUploadInput = document.getElementById('photoUploadInput');
+            const resetProfileBtn = document.getElementById('resetProfileBtn');
+
+            function openEditModal() {
+                pendingPhotoData = null;
+                resetConfirmPending = false;
+                resetProfileBtn.textContent = 'Reset ke Default';
+
+                // Isi form dengan data saat ini
+                editPhotoPreview.dataset.fallbackApplied = 'false';
+                editPhotoPreview.src = profileState.photoSrc || '60009.jpg';
+                document.getElementById('editHeroTagline').value = profileState.heroTagline;
+                document.getElementById('editAboutBio').value = profileState.aboutBio;
+                document.getElementById('editAboutQuote').value = profileState.aboutQuote;
+                document.getElementById('editInstagram').value = profileState.social.instagram;
+                document.getElementById('editWhatsapp').value = profileState.social.whatsapp;
+                document.getElementById('editEmail').value = profileState.social.email;
+
+                // Render field hobi
+                const hobbiesFields = document.getElementById('editHobbiesFields');
+                hobbiesFields.innerHTML = profileState.hobbies.map((h, i) => `
+                    <div class="p-3 rounded-2xl bg-cream-100/70 dark:bg-espresso-900/60 border border-cream-200 dark:border-espresso-700 space-y-2">
+                        <div class="flex gap-2">
+                            <input data-hobby-icon="${i}" type="text" maxlength="4" value="${escapeHtml(h.icon)}" class="w-12 text-center px-2 py-1.5 rounded-xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-sm" aria-label="Ikon hobi ${i + 1}">
+                            <input data-hobby-title="${i}" type="text" value="${escapeHtml(h.title)}" class="flex-1 px-3 py-1.5 rounded-xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-sm font-semibold text-stone-900 dark:text-cream-50" placeholder="Judul Hobi">
+                        </div>
+                        <textarea data-hobby-desc="${i}" rows="2" class="w-full px-3 py-1.5 rounded-xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-xs text-stone-700 dark:text-stone-300" placeholder="Deskripsi singkat">${escapeHtml(h.desc)}</textarea>
+                    </div>
+                `).join('');
+
+                // Render field aktivitas
+                const activitiesFields = document.getElementById('editActivitiesFields');
+                activitiesFields.innerHTML = profileState.activities.map((a, i) => `
+                    <div class="p-3 rounded-2xl bg-cream-100/70 dark:bg-espresso-900/60 border border-cream-200 dark:border-espresso-700 grid grid-cols-1 sm:grid-cols-12 gap-2">
+                        <input data-act-badge="${i}" type="text" value="${escapeHtml(a.badge)}" class="sm:col-span-4 px-3 py-1.5 rounded-xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-xs font-semibold text-stone-700 dark:text-stone-200" placeholder="Label">
+                        <input data-act-title="${i}" type="text" value="${escapeHtml(a.title)}" class="sm:col-span-8 px-3 py-1.5 rounded-xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-sm font-semibold text-stone-900 dark:text-cream-50" placeholder="Judul Aktivitas">
+                        <textarea data-act-desc="${i}" rows="2" class="sm:col-span-12 px-3 py-1.5 rounded-xl bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-xs text-stone-700 dark:text-stone-300" placeholder="Deskripsi aktivitas">${escapeHtml(a.desc)}</textarea>
+                    </div>
+                `).join('');
+
+                editModalBackdrop.classList.remove('hidden');
+                editModalBackdrop.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeEditModal() {
+                editModalBackdrop.classList.add('hidden');
+                editModalBackdrop.classList.remove('flex');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            // Pemicu buka & tutup modal
+            document.getElementById('openEditModalBtn').addEventListener('click', openEditModal);
+            document.getElementById('quickPhotoBtn').addEventListener('click', openEditModal);
+            document.querySelectorAll('.open-edit-trigger').forEach((btn) => {
+                btn.addEventListener('click', openEditModal);
+            });
+            document.getElementById('closeEditModalBtn').addEventListener('click', closeEditModal);
+            document.getElementById('cancelEditModalBtn').addEventListener('click', closeEditModal);
+
+            // Tutup modal jika klik area backdrop luar
+            editModalBackdrop.addEventListener('click', (e) => {
+                if (e.target === editModalBackdrop) closeEditModal();
+            });
+
+            // Tutup modal dengan tombol Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !editModalBackdrop.classList.contains('hidden')) {
+                    closeEditModal();
+                }
+            });
+
+            // Unggah foto baru dari perangkat pengguna
+            document.getElementById('triggerPhotoUploadBtn').addEventListener('click', () => {
+                photoUploadInput.click();
+            });
+
+            photoUploadInput.addEventListener('change', (e) => {
+                const file = e.target.files && e.target.files[0];
+                if (!file) return;
+
+                if (!file.type.startsWith('image/')) {
+                    showToast('Harap pilih file gambar yang valid (JPG, PNG, atau WEBP).', 'error');
+                    return;
+                }
+
+                try {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        pendingPhotoData = event.target.result;
+                        editPhotoPreview.dataset.fallbackApplied = 'false';
+                        editPhotoPreview.src = pendingPhotoData;
+                        showToast('Pratinjau foto siap. Klik "Simpan Perubahan" untuk menerapkan.');
+                    };
+                    reader.readAsDataURL(file);
+                } catch (err) {
+                    showToast('Gagal membaca file foto.', 'error');
+                }
+            });
+
+            // Kembalikan ke foto utama 60009.jpg
+            document.getElementById('restoreDefaultPhotoBtn').addEventListener('click', () => {
+                pendingPhotoData = '60009.jpg';
+                editPhotoPreview.dataset.fallbackApplied = 'false';
+                editPhotoPreview.src = '60009.jpg';
+                showToast('Foto utama (60009.jpg) dipilih.', 'info');
+            });
+
+            // Simpan perubahan profil
+            document.getElementById('saveProfileBtn').addEventListener('click', () => {
+                if (pendingPhotoData) {
+                    profileState.photoSrc = pendingPhotoData;
+                }
+
+                profileState.heroTagline = document.getElementById('editHeroTagline').value.trim() || defaultProfile.heroTagline;
+                profileState.aboutBio = document.getElementById('editAboutBio').value.trim() || defaultProfile.aboutBio;
+                profileState.aboutQuote = document.getElementById('editAboutQuote').value.trim() || defaultProfile.aboutQuote;
+
+                profileState.hobbies = profileState.hobbies.map((h, i) => ({
+                    icon: document.querySelector(`[data-hobby-icon="${i}"]`)?.value.trim() || h.icon,
+                    title: document.querySelector(`[data-hobby-title="${i}"]`)?.value.trim() || h.title,
+                    desc: document.querySelector(`[data-hobby-desc="${i}"]`)?.value.trim() || h.desc
+                }));
+
+                profileState.activities = profileState.activities.map((a, i) => ({
+                    badge: document.querySelector(`[data-act-badge="${i}"]`)?.value.trim() || a.badge,
+                    title: document.querySelector(`[data-act-title="${i}"]`)?.value.trim() || a.title,
+                    desc: document.querySelector(`[data-act-desc="${i}"]`)?.value.trim() || a.desc
+                }));
+
+                profileState.social = {
+                    instagram: document.getElementById('editInstagram').value.trim() || defaultProfile.social.instagram,
+                    whatsapp: document.getElementById('editWhatsapp').value.trim() || defaultProfile.social.whatsapp,
+                    email: document.getElementById('editEmail').value.trim() || defaultProfile.social.email
+                };
+
+                renderProfile();
+                saveProfileState();
+                closeEditModal();
+                showToast('Profil berhasil diperbarui!');
+            });
+
+            // Reset ke pengaturan default dengan konfirmasi 2 langkah (tanpa window.confirm)
+            resetProfileBtn.addEventListener('click', () => {
+                if (!resetConfirmPending) {
+                    resetConfirmPending = true;
+                    resetProfileBtn.textContent = 'Klik sekali lagi untuk konfirmasi reset';
+                    return;
+                }
+                profileState = structuredCloneCompat(defaultProfile);
+                try {
+                    localStorage.removeItem(STORAGE_KEY);
+                } catch (err) {
+                    // Abaikan jika penyimpanan dibatasi
+                }
+                renderProfile();
+                closeEditModal();
+                showToast('Profil dikembalikan ke pengaturan awal.', 'info');
+            });
+
+            // =========================================================
+            // FORMULIR KONTAK DENGAN VALIDASI & NOTIFIKASI SUKSES
+            // =========================================================
+            const contactForm = document.getElementById('contactForm');
+            const formErrorText = document.getElementById('formErrorText');
+            const formSuccessBanner = document.getElementById('formSuccessBanner');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('senderName').value.trim();
+                const contact = document.getElementById('senderContact').value.trim();
+                const message = document.getElementById('senderMessage').value.trim();
+
+                formErrorText.classList.add('hidden');
+                formSuccessBanner.classList.add('hidden');
+
+                if (!name || !contact || !message) {
+                    formErrorText.textContent = 'Mohon lengkapi nama, kontak, dan pesan terlebih dahulu.';
+                    formErrorText.classList.remove('hidden');
+                    showToast('Lengkapi semua kolom pesan ya!', 'error');
+                    return;
+                }
+
+                // Tampilkan banner & notifikasi berhasil
+                formSuccessBanner.classList.remove('hidden');
+                contactForm.reset();
+                showToast(`Terima kasih, ${name}! Pesanmu berhasil terkirim.`);
+            });
+
+            // =========================================================
+            // ANIMASI MASUK HALUS SAAT SCROLL (INTERSECTION OBSERVER)
+            // =========================================================
+            function initScrollReveal() {
+                const revealItems = document.querySelectorAll('.reveal-item');
+                if (!('IntersectionObserver' in window)) {
+                    revealItems.forEach((el) => el.classList.remove('opacity-0', 'translate-y-6'));
+                    return;
+                }
+
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.remove('opacity-0', 'translate-y-6');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+
+                revealItems.forEach((el) => observer.observe(el));
+            }
+
+            // Inisialisasi aplikasi
+            initTheme();
+            renderProfile();
+            initScrollReveal();
+        });
+    </script>
+</body>
+</html>

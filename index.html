@@ -201,7 +201,7 @@
                         </div>
                     </div>
 
-                    <!-- Kolom Kanan: Bingkai Foto Profil Estetis (60009.jpg) -->
+                    <!-- Kolom Kanan: Bingkai Foto Profil Estetis (foto%20saya.jpeg) -->
                     <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center reveal-item opacity-0 translate-y-6 transition-all duration-700 delay-150">
                         <div class="relative w-full max-w-xs sm:max-w-sm">
                             <!-- Lapisan Bingkai Dekoratif di Belakang -->
@@ -210,10 +210,10 @@
                             <!-- Bingkai Utama Foto Profil -->
                             <div class="relative group rounded-[1.85rem] bg-white dark:bg-espresso-800 p-3 shadow-soft dark:shadow-soft-dark border border-cream-300/80 dark:border-espresso-700">
                                 <div class="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] bg-cream-200 dark:bg-espresso-900">
-                                    <!-- Foto Pengguna: 60009.jpg -->
+                                    <!-- Foto Pengguna: foto%20saya.jpeg -->
                                     <img
                                         id="heroProfileImage"
-                                        src="60009.jpg"
+                                        src="foto%20saya.jpeg"
                                         alt="Foto Profil Sava Shirley Luas"
                                         class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                                         onerror="handleImageFallback(this)"
@@ -647,7 +647,7 @@
                         Foto Profil Halaman Depan
                     </label>
                     <div class="flex flex-col sm:flex-row items-center gap-4">
-                        <img id="editPhotoPreview" src="60009.jpg" alt="Pratinjau Foto" class="w-20 h-24 rounded-2xl object-cover object-top border border-cream-300 dark:border-espresso-700 bg-cream-200" onerror="handleImageFallback(this)">
+                        <img id="editPhotoPreview" src="foto%20saya.jpeg" alt="Pratinjau Foto" class="w-20 h-24 rounded-2xl object-cover object-top border border-cream-300 dark:border-espresso-700 bg-cream-200" onerror="handleImageFallback(this)">
                         <div class="flex-1 w-full space-y-2 text-center sm:text-left">
                             <input id="photoUploadInput" type="file" accept="image/*" class="hidden">
                             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
@@ -655,7 +655,7 @@
                                     Pilih Foto dari Perangkat
                                 </button>
                                 <button type="button" id="restoreDefaultPhotoBtn" class="px-3.5 py-2 rounded-full bg-white dark:bg-espresso-800 border border-cream-300 dark:border-espresso-700 text-stone-700 dark:text-stone-200 text-xs font-semibold hover:border-terracotta-400 transition-colors">
-                                    Gunakan Foto Utama (60009.jpg)
+                                    Gunakan Foto Utama (foto%20saya.jpeg)
                                 </button>
                             </div>
                             <p class="text-[11px] text-stone-500 dark:text-stone-400">Format JPG, PNG, atau WEBP. Foto diperbarui langsung di halaman depan.</p>
@@ -743,7 +743,7 @@
     <!-- ========================================================= -->
     <script>
         /**
-         * Fallback otomatis apabila file gambar lokal (60009.jpg) belum tersedia di lingkungan preview.
+         * Fallback otomatis apabila file gambar lokal (foto%20saya.jpeg) belum tersedia di lingkungan preview.
          */
         function handleImageFallback(imgElement) {
             if (imgElement.dataset.fallbackApplied === 'true') return;
@@ -1068,7 +1068,7 @@
 
                 // Isi form dengan data saat ini
                 editPhotoPreview.dataset.fallbackApplied = 'false';
-                editPhotoPreview.src = profileState.photoSrc || '60009.jpg';
+                editPhotoPreview.src = profileState.photoSrc || 'foto%20saya.jpeg';
                 document.getElementById('editHeroTagline').value = profileState.heroTagline;
                 document.getElementById('editAboutBio').value = profileState.aboutBio;
                 document.getElementById('editAboutQuote').value = profileState.aboutQuote;
@@ -1158,12 +1158,12 @@
                 }
             });
 
-            // Kembalikan ke foto utama 60009.jpg
+            // Kembalikan ke foto utama foto%20saya.jpeg
             document.getElementById('restoreDefaultPhotoBtn').addEventListener('click', () => {
-                pendingPhotoData = '60009.jpg';
+                pendingPhotoData = 'foto%20saya.jpeg';
                 editPhotoPreview.dataset.fallbackApplied = 'false';
-                editPhotoPreview.src = '60009.jpg';
-                showToast('Foto utama (60009.jpg) dipilih.', 'info');
+                editPhotoPreview.src = 'foto%20saya.jpeg';
+                showToast('Foto utama (foto%20saya.jpeg) dipilih.', 'info');
             });
 
             // Simpan perubahan profil

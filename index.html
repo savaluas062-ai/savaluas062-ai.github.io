@@ -753,12 +753,12 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             // Kunci penyimpanan lokal untuk menyimpan kustomisasi pengguna
-            const STORAGE_KEY = 'sava_shirley_profile_v1';
+            const STORAGE_KEY = 'sava_shirley_profile_v2';
             const THEME_KEY = 'sava_shirley_theme_v1';
 
             // Data default profil Sava Shirley Luas
             const defaultProfile = {
-                photoSrc: '60009.jpg',
+                photoSrc: 'foto%20saya.jpeg',
                 heroTagline: 'Pribadi yang hangat, kreatif, dan selalu bersemangat menikmati setiap proses perjalanan hidup. Berdomisili di Pondok Indah Maumbi dan senang berbagi cerita, inspirasi, serta momen penuh makna.',
                 aboutBio: 'Halo! Nama saya Sava Shirley Luas, lahir pada 27 September 2007 dan saat ini tinggal di Pondok Indah Maumbi. Sebagai seorang Libra, saya menyukai keseimbangan, suasana yang hangat, serta hal-hal bernuansa estetis dalam keseharian. Saya senang bertemu orang baru, menjalin pertemanan yang tulus, dan terus belajar hal-hal bermanfaat untuk mengembangkan potensi diri.',
                 aboutQuote: '"Menikmati setiap langkah dengan hati yang bersyukur, senyuman yang hangat, dan semangat untuk terus bertumbuh."',
@@ -912,9 +912,11 @@
              */
             function renderProfile() {
                 // Foto profil
+               
+                // Foto profil
                 const heroImg = document.getElementById('heroProfileImage');
                 heroImg.dataset.fallbackApplied = 'false';
-                heroImg.src = profileState.photoSrc || '60009.jpg';
+                heroImg.src = profileState.photoSrc || 'foto%20saya.jpeg';
 
                 // Teks perkenalan
                 document.getElementById('displayHeroTagline').textContent = profileState.heroTagline;
